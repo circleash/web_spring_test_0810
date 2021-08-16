@@ -13,6 +13,8 @@ public class Test01Controller {
 	
 	@RequestMapping("/1")
 	@ResponseBody
+	//String은 text/plain 형태로 변화되는데 컨버터를 통해 자동적으로 바뀌는 것임.
+	//크롬이 html로 처리 하는것임. 내부적으로 봤을때는 text/plain
 	public String printString() {
 		String htmlString = "<h1>테스트 프로젝트 완성</h1> <br> <b>해당 프로젝트를 통해서 문제풀이를 진행합니다.</b>";
 		
@@ -28,4 +30,6 @@ public class Test01Controller {
 		
 		return map;
 	}
+	
+	
 }
