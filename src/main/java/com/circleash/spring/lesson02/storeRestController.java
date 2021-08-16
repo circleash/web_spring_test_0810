@@ -13,7 +13,6 @@ import com.circleash.spring.lesson02.model.Store;
 public class storeRestController {
 	@Autowired
 	private StoreBO storeBO;
-	
 	@RequestMapping("/lesson02/test01")
 	public List<Store> test01() {
 		return storeBO.getStoreList();
