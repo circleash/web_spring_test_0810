@@ -28,4 +28,22 @@ public class RealestateBO {
 		return realestateDAO.selectRealEstateByAreaPrice(area, price);
 	}
 
+	public int addRealestateAsObject(Realestate realestate) {
+		return realestateDAO.insertRealestateAsObject(realestate);
+	}
+	
+	//Method생성
+	public int addRealestate(int realtorId, String address, int area, String type, int price, int rentPrice) {
+		return realestateDAO.insertRealestate(realtorId, address, area, type, price, rentPrice);
+	}
+	
+	public int updateRealEstateById(int id, String type, int price) {
+		return realestateDAO.updatedRealEstateById(id, type, price);
+	}
+	
+	public int deleteRealEstateById(int id) {
+		return realestateDAO.deleteRealEstateById(id);
+	}
+
+	
 }
