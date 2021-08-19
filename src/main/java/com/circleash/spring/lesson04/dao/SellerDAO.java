@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 public interface SellerDAO {
 	public int insertSeller(
 			@Param("nickname") String nickname
-			,@Param("profileImageUrl") String profileImageUrl
-			,@Param("temperature") double temperature
+			, @Param("profileImageUrl") String profileImageUrl
+			, @Param("temperature") double temperature
 			);
 }
