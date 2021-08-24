@@ -3,6 +3,8 @@ package com.circleash.spring.lesson04.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.circleash.spring.lesson04.model.Seller;
+
 @Repository
 public interface SellerDAO {
 	public int insertSeller(
@@ -10,4 +12,8 @@ public interface SellerDAO {
 			, @Param("profileImageUrl") String profileImageUrl
 			, @Param("temperature") double temperature
 			);
+	
+	public Seller selectLastUser();
+	
+	public Seller selectSeller(@Param("id") int id);
 }

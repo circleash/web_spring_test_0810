@@ -9,7 +9,7 @@
  			`seller`
  		(
  			`nickname`
- 			, `profileImageUrl'
+ 			, `profileImageUrl`
  			, `temperature`
  			, `createdAt`
  			, `updatedAt` 		
@@ -22,4 +22,41 @@
  			)
  			
  	</insert>
+ 	
+ 	<select id="selectLastUser" resultType="com.circleash.spring.lesson04.model.Seller">
+ 		SELECT
+ 			`id`
+ 			, `nickname`
+ 			, `profileImageUrl`
+ 			, `temperature`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`seller`
+ 		ORDER BY `id` DESC
+ 		LIMIT 1
+ 	
+ 	</select>
+ 	
+ 	<select id="selectSeller" resultType="com.circleash.spring.lesson04.model.Seller"
+ 	parameterType="int">
+ 		SELECT
+ 			`id`
+ 			, `nickname`
+ 			, `profileImageUrl`
+ 			, `temperature`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`seller`
+ 		WHERE
+ 			`id` = #{id}
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	</select>
+ 	
+ 	
  </mapper>
