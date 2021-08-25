@@ -14,6 +14,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
+	<fmt:setLocale value="ko_KR" scope="session" />
 	<div class="container">
 		<h1>1. 후보자 득표율</h1>
 		<table class="table text-center">
@@ -47,11 +48,11 @@
 			</thead>
 			<tbody>
 			<c:forEach var="cardBill" items="${cardBill }">
+				<fmt:parseDate value="${cardBill.date }" pattern="yyyy-MM-dd" var="date"/>
 				<tr>
 					<td>${cardBill.store }</td>
-					<td><fmt:formatNumber value="${cardBill.pay }" type="currency" currencySymbol="$"/></td>
-					<td><fmt:parseDate value="${cardBill.date }" pattern="yyyy-MM-dd" var="date"/>
-						<fmt:formatDate value="${date }" pattern="yyyy년 MM월 dd일" /></td>
+					<td><fmt:formatNumber value="${cardBill.pay }" type="currency" /></td>
+					<td><fmt:formatDate value="${date }" pattern="yyyy년 MM월 dd일" /></td>
 					<td>${cardBill.installment }</td>
 				</tr>
 			</c:forEach>
