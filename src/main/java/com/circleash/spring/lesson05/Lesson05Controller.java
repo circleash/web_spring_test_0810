@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.circleash.spring.lesson05.model.Member;
+
 @RequestMapping("/lesson05")
 @Controller
 public class Lesson05Controller {
@@ -117,8 +119,8 @@ public class Lesson05Controller {
 	}
 	
 	@GetMapping("/test04")
-	public String test04() {
-		List<Member> memebers = new ArrayList<>();
+	public String test04(Model model) {
+		List<Member> members = new ArrayList<>();
 
 		Member member = new Member();
 		member.setName("유비");
@@ -126,7 +128,7 @@ public class Lesson05Controller {
 		member.setEmail("youbee@gmail.com");
 		member.setNationality("삼국시대 촉한");
 		member.setIntroduce("저는 촉의 군주 유비입니다. 삼국통일을 위해 열심히 일하겠습니다.");
-		memebers.add(member);
+		members.add(member);
 
 		member = new Member();
 		member.setName("관우");
@@ -134,7 +136,7 @@ public class Lesson05Controller {
 		member.setEmail("woo@naver.com");
 		member.setNationality("삼국시대 촉한");
 		member.setIntroduce("관우에요. 저는 유비형님 보다 나이는 많지만 일단 아우입니다.");
-		memebers.add(member);
+		members.add(member);
 
 		member = new Member();
 		member.setName("장비");
@@ -142,7 +144,7 @@ public class Lesson05Controller {
 		member.setNationality("삼국시대 촉한");
 		member.setEmail("tools@gmail.com");
 		member.setIntroduce("장비라우");
-		memebers.add(member);
+		members.add(member);
 
 		member = new Member();
 		member.setName("조조");
@@ -150,7 +152,7 @@ public class Lesson05Controller {
 		member.setNationality("삼국시대 위");
 		member.setEmail("jojo@gmail.com");
 		member.setIntroduce("이름은 조조 자는 맹덕이라 하오");
-		memebers.add(member);
+		members.add(member);
 
 		member = new Member();
 		member.setName("주유");
@@ -158,7 +160,7 @@ public class Lesson05Controller {
 		member.setNationality("삼국시대 오");
 		member.setEmail("jooyou@kakao.com");
 		member.setIntroduce("주유는 주유소에서 ㅋㅋ");
-		memebers.add(member);
+		members.add(member);
 
 		member = new Member();
 		member.setName("황충");
@@ -166,11 +168,13 @@ public class Lesson05Controller {
 		member.setNationality("삼국시대 촉한");
 		member.setEmail("yellowbug@naver.com");
 		member.setIntroduce("내 수염 좀 멋있는 듯");
-		memebers.add(member);
+		members.add(member);
+		
+		model.addAttribute("members", members);
 		
 		return "lesson05/test04";
 		
 	}
-	
+
 	
 }
