@@ -96,6 +96,12 @@
 				alert("주소를 입력하세요");
 				return;
 			}
+			
+			// http:// 또는 https:// 가 아니면 잘못된 url
+			if(!(url.startsWith("http://") || url.startsWith("https://"))) {
+				alert("잘못된 주소 형식입니다.");
+				return;
+			}
 			$.ajax({
 				type:"get",
 				url:"/lesson06/is_url_duplication",

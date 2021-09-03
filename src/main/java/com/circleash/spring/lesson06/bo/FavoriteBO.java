@@ -31,4 +31,18 @@ public class FavoriteBO {
 			return false;
 		}
 	}
+	
+	public boolean isDuplicateUrl(String url) {
+		int count = favoriteDAO.selectCountByUrl(url);
+		
+		if(count >= 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public int deleteFavorite(int id) {
+		return favoriteDAO.deleteFavorite(id);
+	}
 }
